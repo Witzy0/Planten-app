@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graslelie</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="graslelie.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="Waterbalk.css">
+</head>
+
+<body class="graslelie-page">
+    <div class="ripple-wrap">
+        <div class="ripple"></div>
+    </div>
+    <a href="index.html" class="back-to-main-btn">
+        <img src="https://img.icons8.com/?size=100&id=4MBC7gtaoPlW&format=png&color=000000" alt="Terug naar Hoofdpagina"
+            class="back-icon">
+    </a>
+
+    <div id="main-content">
+        <div class="page-content">
+            <div class="calendar" id="graslelieCalendar">
+                <div class="header">
+                    <div id="graslelie-prev" class="btn"><i class="fa-solid fa-arrow-left"></i></div>
+                    <div id="graslelie-month-year"></div>
+                    <div id="graslelie-next" class="btn"><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div class="days" id="graslelie-days"></div>
+            </div>
+
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slider-text" id="graslelieSliderText"></div>
+                </div>
+                <button id="graslelieNextBtn">Volgende Tip</button>
+                <div class="loader">
+                    <span>HydroHelper</span>
+                    <span>HydroHelper</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="info">
+            <select id="plant-select">
+                <option value="Cactus">🌵 Cactus</option>
+                <option value="Aloë vera">🌿 Aloë vera</option>
+                <option value="Calathea">🌿 Calathea</option>
+                <option value="Graslelie" selected >🌱 Graslelie</option>
+                <option value="Bonsai">🌳 Bonsai</option>
+            </select>
+            <div class="plant-name" id="plant-name">🌿 Calathea</div>
+            <div class="timer" id="timer-text">💧 Geef nu water om te starten</div>
+            <div class="ml">Nog <span id="water-ml">0</span> ml</div>
+            <button id="water-button">Geef Water (100-150ml)</button>
+            <div id="alert"></div>
+        </div>
+        <div class="water-bar">
+            <div class="water" id="water"></div>
+        </div>
+    </div>
+    <script src="Waterbalk.js"></script>
+    <script src="java.js"></script>
+    <script src="GraslelieZinnen.js"></script>
+    <script src="GraslelieCalendar.js"></script>
+</body>
+
+</html>

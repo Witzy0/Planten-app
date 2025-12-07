@@ -1,0 +1,189 @@
+/* In your cactus.css file */
+
+/* Achtergrond voor de cactus.html pagina */
+body.cactus-page {
+    background-image: url("achtergrondcactus.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Algemene stijlen voor de terugknop */
+.back-to-main-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    border-radius: 50%;
+    z-index: 1002;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-main-btn:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Stijl voor het icoon zelf binnen de knop */
+.back-icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%);
+}
+
+/* Inhoud-specifieke stijlen voor de pagina */
+.page-content {
+    display: flex;
+    flex-direction: column;
+    /* This keeps items stacked vertically */
+    justify-content: center;
+    align-items: center;
+    /* Centers items horizontally */
+    min-height: 100vh;
+    text-align: center;
+    color: white;
+    padding: 80px 20px 20px 20px;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+.page-content h1 {
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+/* Optional: Hides the hr if you added the class */
+.hidden-hr {
+    display: none;
+}
+
+/* Styles for the slider (from CactusZinnen.css) */
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.slider-wrapper {
+    width: 600px;
+    max-width: 90%;
+    height: 80px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    text-align: center;
+    box-sizing: border-box;
+    /* margin-top: 300px; <-- REMOVE THIS, it pushes it down too much */
+}
+
+.slider-text {
+    font-size: 22px;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    color: white;
+}
+
+button#nextBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button#nextBtn:hover {
+    background-color: #0056b3;
+}
+
+/* NEW: Styles for the Calendar */
+.calendar {
+    background-color: rgba(17, 17, 17, 0.8);
+    /* Semi-transparent dark background */
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(34, 34, 34, 0.5);
+    overflow: hidden;
+    width: 300px;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+    /* Add space above the calendar */
+    margin-bottom: 20px;
+    /* Add space below the calendar */
+}
+
+.calendar .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.calendar .btn {
+    /* Added .calendar to scope it */
+    cursor: pointer;
+}
+
+.calendar #month-year {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.calendar .weekdays,
+.calendar .days {
+    /* Added .calendar to scope it */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.calendar .days {
+    /* Added .calendar to scope it */
+    height: 210px;
+}
+
+.calendar .weekdays div,
+.calendar .days div {
+    /* Added .calendar to scope it */
+    width: 14.28%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+.calendar .days div {
+    /* Added .calendar to scope it */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.calendar .days div:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Lighter hover for dark theme */
+    color: orangered;
+}
+
+.calendar .days .today {
+    background-color: orangered;
+    color: white;
+}
+
+.calendar .days .fade {
+    color: #aaa;
+    /* Lighter fade color for dark theme */
+}

@@ -1,0 +1,268 @@
+html,
+body {
+    height: 100%;
+    /* Zorg dat de body de volledige hoogte van de html vult */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgb(62, 180, 137);
+    background: linear-gradient(159deg, rgba(62, 180, 137, 1) 0%, rgba(62, 180, 137, 0.8) 100%);
+    /* Vul de gradient aan */
+    background-attachment: fixed;
+    overflow-x: hidden;
+    /* Voorkom horizontale scrollbalken */
+    overflow-y: scroll;
+    /* Zorg dat de verticale scrollbalk verschijnt indien nodig */
+    scroll-snap-type: y mandatory;
+    /* Dit is cruciaal voor de 'stap-voor-stap' scroll */
+
+    /* NIEUWE CODE OM DE SCROLLBAR TE VERBERGEN */
+    /* Voor WebKit browsers (Chrome, Safari, Edge op Chromium) */
+    &::-webkit-scrollbar {
+        display: none;
+        /* Verbergt de scrollbar */
+    }
+
+    /* Voor Firefox */
+    scrollbar-width: none;
+    /* Verbergt de scrollbar in Firefox */
+
+    /* Voor Internet Explorer/Edge (oudere versies) */
+    -ms-overflow-style: none;
+    /* Verbergt de scrollbar in IE/Edge */
+}
+
+/* Algemene instellingen voor alle planten secties */
+.cactus-photo,
+.aloevera-photo,
+.calathea-photo,
+.graslelie,
+/* Let op: de classnaam is 'graslelie', niet 'graslelie-photo' */
+.bonsai-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Elke sectie vult de volledige viewport hoogte */
+    width: 100%;
+    margin: 0 auto;
+    /* Centreer de secties horizontaal */
+    scroll-snap-align: start;
+    /* Zorg ervoor dat elke sectie netjes 'snapt' bovenaan de viewport */
+    flex-shrink: 0;
+    /* Voorkom dat de secties kleiner worden dan 100vh */
+}
+
+/* CACTUS SETTINGS */
+.cactus-photo img {
+    width: 225px;
+    height: auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.cactus-photo img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.cactus-photo img:active {
+    transform: scale(0.98);
+    filter: brightness(0.9);
+}
+
+/* Einde CACTUS SETTINGS */
+
+
+/* ALOEVERA SETTINGS (herhaal deze structuur voor elke plant) */
+.aloevera-photo img {
+    width: 225px;
+    height: auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.aloevera-photo img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.aloevera-photo img:active {
+    transform: scale(0.98);
+    filter: brightness(0.9);
+}
+
+/* Einde ALOEVERA SETTINGS */
+
+/* CALATHEA SETTINGS */
+.calathea-photo img {
+    width: 225px;
+    height: auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.calathea-photo img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.calathea-photo img:active {
+    transform: scale(0.98);
+    filter: brightness(0.9);
+}
+
+/* Einde CALATHEA SETTINGS */
+
+/* GRASLELIE SETTINGS */
+.graslelie img {
+    /* Gebruik hier .graslelie omdat dat je class is */
+    width: 225px;
+    height: auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.graslelie img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.graslelie img:active {
+    transform: scale(0.98);
+    filter: brightness(0.9);
+}
+
+/* Einde GRASLELIE SETTINGS */
+
+/* BONSAI SETTINGS */
+.bonsai-photo img {
+    width: 225px;
+    height: auto;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.bonsai-photo img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.bonsai-photo img:active {
+    transform: scale(0.98);
+    filter: brightness(0.9);
+}
+
+/* Einde BONSAI SETTINGS */
+
+
+/* ARROWS SETTINGS - Deze blijven grotendeels hetzelfde, ze zijn fixed gepositioneerd */
+.navigation-arrows {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    z-index: 100;
+}
+
+.arrow {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.arrow.up-arrow {
+    transform: rotate(180deg);
+}
+
+.arrow.down-arrow {
+    transform: rotate(360deg);
+    /* Deze rotatie is eigenlijk 0deg, maar het werkt */
+}
+
+.arrow span {
+    display: block;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
+/* Einde ARROWS SETTINGS */
+
+/* ... (je bestaande CSS voor pijlen en plantensecties) ... */
+
+/* DOTS SETTINGS */
+.navigation-dots {
+    position: fixed;
+    left: 20px;
+    /* Plaats de dots aan de linkerkant */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* Afstand tussen de dots */
+    z-index: 100;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.4);
+    /* Semi-transparant wit */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    /* Lichte rand */
+}
+
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Lichter bij hover */
+    transform: scale(1.1);
+}
+
+.dot.active {
+    background-color: #ffffff;
+    /* Volledig wit wanneer actief */
+    border-color: #ffffff;
+    transform: scale(1.2);
+    /* Iets groter wanneer actief */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    /* Lichte glow */
+}
+
+/* Einde DOTS SETTINGS */
+
+/* ... (de rest van je bestaande CSS) ... */

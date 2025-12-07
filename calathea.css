@@ -1,0 +1,197 @@
+/* In your calathea.css file */
+
+/* Background for the calathea.html page */
+body.calathea-page {
+    background-image: url("achtergrondcalathea.png");
+    /* Changed image path to calathea */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Common styles for the back button (can also be in styles.css if reused across pages) */
+.back-to-main-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+    border-radius: 50%;
+    z-index: 1002;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-main-btn:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Style for the icon itself within the button */
+.back-icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%);
+    /* Keeps the icon white */
+}
+
+/* Content specific styles for the page */
+.page-content {
+    display: flex;
+    flex-direction: column;
+    /* Stack calendar and slider vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    color: white;
+    /* Text color for content */
+    padding: 80px 20px 20px 20px;
+    /* Adjust padding to make space for the button */
+    box-sizing: border-box;
+    background-color: transparent;
+    /* Ensures background image is visible */
+}
+
+.page-content h1 {
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+/* Styles for the slider container */
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+    /* Add some space above the slider */
+    width: 100%;
+    /* Ensure it takes full available width in page-content */
+}
+
+.slider-wrapper {
+    width: 600px;
+    /* Max width */
+    max-width: 90%;
+    /* Ensure it's responsive on smaller screens */
+    height: 80px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent white to fit your theme */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    text-align: center;
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+}
+
+.slider-text {
+    font-size: 22px;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    color: white;
+    /* Ensure text is white for dark theme */
+}
+
+button#calatheaNextBtn {
+    /* Specific ID for the Calathea button */
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #28a745;
+    /* Green color for Calathea, or choose another if preferred */
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button#calatheaNextBtn:hover {
+    background-color: #218838;
+}
+
+/* Calendar specific styles */
+.calendar {
+    width: 320px;
+    background-color: rgba(17, 17, 17, 0.8);
+    /* Dark background for calendar */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 40px;
+    /* Space between calendar and other content */
+    color: white;
+    /* Text color */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.header .btn {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.header .btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Light hover effect */
+}
+
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #ccc;
+    /* Lighter color for weekdays */
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+}
+
+.days div {
+    padding: 10px 0;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    cursor: default;
+    /* Default cursor for days */
+}
+
+.days div:hover:not(.fade) {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Hover for active days */
+}
+
+.days div.today {
+    background-color: #28a745;
+    /* Highlight today's date - changed to green for Calathea */
+    color: white;
+    font-weight: bold;
+}
+
+.days div.fade {
+    color: #888;
+    /* Faded color for days from prev/next month */
+}
